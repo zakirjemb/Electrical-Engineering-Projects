@@ -17,8 +17,8 @@ Maximized SNR through coherent integration for low-RCS targets.
 Output: Generated Range-Doppler Maps to visualize target distance and velocity.
 
 🛠️ Tech Stack
-Software: MATLAB, LabVIEW.
+Software: MATLAB, LabVIEW, 3D Fusion.
 
-Hardware: SDR (Software Defined Radio), RF Antennas.
+Hardware: SDR (Software Defined Radio), RF Antennas, 3D printer.
 
 Key Concepts: Doppler Shift, Ambiguity Functions, SNR Optimization.**
