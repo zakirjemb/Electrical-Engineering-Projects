@@ -10,7 +10,8 @@
 - **Smart Waste Sorting System:** Raspberry Pi + OpenCV [Link](./Embedded-Vision/Smart-Waste-Sorter)
 - **Teachable Machine AI:** Image Classification [Link](./Software/Teachable-Machine-AI)
 
-## 🤖 Robotics & Digital Systems
+## 🤖 Robotics & Control Systems
+- **Water Level Control System (EEN365):** PID Controller Tuning ($K_p=2, K_i=0.01$) [Link](./EEN365-Control-Systems-Water-Level)
 - **Autonomous Sumo Robot:** Arduino & IR Sensors [Link](./Robotics/Sumo-Robot-Arduino)
 - **FPGA Digital Clock:** VHDL Modular Timing [Link](./Digital-Systems/FPGA-Digital-Clock)
 - **Garage Occupancy Detection:** Discrete Logic Gates [Link](./Digital-Systems/Garage-Occupancy-Logic)
@@ -23,6 +24,3 @@
 ## 📡 Signal Processing & Electromagnetics
 - **Motion Detection Radar:** Electromagnetic Prototype [Link](./Signal-Processing/Motion-Detection-Radar)
 - **Audio Analysis:** Frequency Filtering in MATLAB [Link](./Signal-Processing/Audio-Filtering)
-
-## 💻 Software Development
-- **Course Schedule App:** Frontend & Database [Link](./Software/Course-Schedule-Web-App)
