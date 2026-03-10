@@ -1,0 +1,589 @@
+Analysis & Synthesis report for top_module
+Wed Jun 04 15:26:49 2025
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: clock_divider:clk_div_inst
+ 14. Parameter Settings for User Entity Instance: clock_divider:fast_clk_inst
+ 15. Parameter Settings for User Entity Instance: debouncer:debounce_set_clock_hr
+ 16. Parameter Settings for User Entity Instance: debouncer:debounce_set_clock_min
+ 17. Parameter Settings for User Entity Instance: debouncer:debounce_set_clock_sec
+ 18. Parameter Settings for User Entity Instance: debouncer:debounce_toggle
+ 19. Parameter Settings for User Entity Instance: debouncer:debounce_start
+ 20. Parameter Settings for User Entity Instance: debouncer:debounce_pause
+ 21. Parameter Settings for User Entity Instance: debouncer:debounce_lap
+ 22. Parameter Settings for User Entity Instance: debouncer:debounce_mode
+ 23. Parameter Settings for User Entity Instance: binary_to_bcd:bin_to_bcd_hr
+ 24. Parameter Settings for User Entity Instance: binary_to_bcd:bin_to_bcd_min
+ 25. Parameter Settings for User Entity Instance: binary_to_bcd:bin_to_bcd_sec
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Jun 04 15:26:49 2025           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; top_module                                      ;
+; Top-level Entity Name              ; top_module                                      ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; 473                                             ;
+;     Total combinational functions  ; 440                                             ;
+;     Dedicated logic registers      ; 214                                             ;
+; Total registers                    ; 214                                             ;
+; Total pins                         ; 70                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; top_module         ; top_module         ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 12     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                       ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------+---------+
+; seven_segment_driver.vhd         ; yes             ; User VHDL File  ; C:/Users/mohth/Downloads/My ADU/Spring 2024-2025/CEN466/Project/CEN466FinalProject/seven_segment_driver.vhd ;         ;
+; pause_control.vhd                ; yes             ; User VHDL File  ; C:/Users/mohth/Downloads/My ADU/Spring 2024-2025/CEN466/Project/CEN466FinalProject/pause_control.vhd        ;         ;
+; heartbeat_gen.vhd                ; yes             ; User VHDL File  ; C:/Users/mohth/Downloads/My ADU/Spring 2024-2025/CEN466/Project/CEN466FinalProject/heartbeat_gen.vhd        ;         ;
+; debouncer.vhd                    ; yes             ; User VHDL File  ; C:/Users/mohth/Downloads/My ADU/Spring 2024-2025/CEN466/Project/CEN466FinalProject/debouncer.vhd            ;         ;
+; clock_divider.vhd                ; yes             ; User VHDL File  ; C:/Users/mohth/Downloads/My ADU/Spring 2024-2025/CEN466/Project/CEN466FinalProject/clock_divider.vhd        ;         ;
+; mode_fsm.vhd                     ; yes             ; User VHDL File  ; C:/Users/mohth/Downloads/My ADU/Spring 2024-2025/CEN466/Project/CEN466FinalProject/mode_fsm.vhd             ;         ;
+; format_toggle.vhd                ; yes             ; User VHDL File  ; C:/Users/mohth/Downloads/My ADU/Spring 2024-2025/CEN466/Project/CEN466FinalProject/format_toggle.vhd        ;         ;
+; clock_counter.vhd                ; yes             ; User VHDL File  ; C:/Users/mohth/Downloads/My ADU/Spring 2024-2025/CEN466/Project/CEN466FinalProject/clock_counter.vhd        ;         ;
+; stopwatch_counter.vhd            ; yes             ; User VHDL File  ; C:/Users/mohth/Downloads/My ADU/Spring 2024-2025/CEN466/Project/CEN466FinalProject/stopwatch_counter.vhd    ;         ;
+; lap_control.vhd                  ; yes             ; User VHDL File  ; C:/Users/mohth/Downloads/My ADU/Spring 2024-2025/CEN466/Project/CEN466FinalProject/lap_control.vhd          ;         ;
+; binary_to_bcd.vhd                ; yes             ; User VHDL File  ; C:/Users/mohth/Downloads/My ADU/Spring 2024-2025/CEN466/Project/CEN466FinalProject/binary_to_bcd.vhd        ;         ;
+; top_module.vhd                   ; yes             ; User VHDL File  ; C:/Users/mohth/Downloads/My ADU/Spring 2024-2025/CEN466/Project/CEN466FinalProject/top_module.vhd           ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 473         ;
+;                                             ;             ;
+; Total combinational functions               ; 440         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 182         ;
+;     -- 3 input functions                    ; 85          ;
+;     -- <=2 input functions                  ; 173         ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 326         ;
+;     -- arithmetic mode                      ; 114         ;
+;                                             ;             ;
+; Total registers                             ; 214         ;
+;     -- Dedicated logic registers            ; 214         ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 70          ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+; Maximum fan-out node                        ; reset~input ;
+; Maximum fan-out                             ; 191         ;
+; Total fan-out                               ; 2150        ;
+; Average fan-out                             ; 2.71        ;
++---------------------------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                               ;
++----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------+--------------+
+; Compilation Hierarchy Node             ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                           ; Library Name ;
++----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------+--------------+
+; |top_module                            ; 440 (35)          ; 214 (4)      ; 0           ; 0            ; 0       ; 0         ; 70   ; 0            ; |top_module                                   ; work         ;
+;    |binary_to_bcd:bin_to_bcd_hr|       ; 10 (10)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|binary_to_bcd:bin_to_bcd_hr       ; work         ;
+;    |binary_to_bcd:bin_to_bcd_min|      ; 13 (13)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|binary_to_bcd:bin_to_bcd_min      ; work         ;
+;    |binary_to_bcd:bin_to_bcd_sec|      ; 13 (13)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|binary_to_bcd:bin_to_bcd_sec      ; work         ;
+;    |clock_counter:clk_counter_inst|    ; 52 (52)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|clock_counter:clk_counter_inst    ; work         ;
+;    |clock_divider:clk_div_inst|        ; 48 (48)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|clock_divider:clk_div_inst        ; work         ;
+;    |clock_divider:fast_clk_inst|       ; 27 (27)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|clock_divider:fast_clk_inst       ; work         ;
+;    |debouncer:debounce_lap|            ; 11 (11)           ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|debouncer:debounce_lap            ; work         ;
+;    |debouncer:debounce_mode|           ; 11 (11)           ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|debouncer:debounce_mode           ; work         ;
+;    |debouncer:debounce_pause|          ; 11 (11)           ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|debouncer:debounce_pause          ; work         ;
+;    |debouncer:debounce_set_clock_hr|   ; 11 (11)           ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|debouncer:debounce_set_clock_hr   ; work         ;
+;    |debouncer:debounce_set_clock_min|  ; 11 (11)           ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|debouncer:debounce_set_clock_min  ; work         ;
+;    |debouncer:debounce_set_clock_sec|  ; 11 (11)           ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|debouncer:debounce_set_clock_sec  ; work         ;
+;    |debouncer:debounce_start|          ; 11 (11)           ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|debouncer:debounce_start          ; work         ;
+;    |debouncer:debounce_toggle|         ; 11 (11)           ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|debouncer:debounce_toggle         ; work         ;
+;    |format_toggle:format_toggle_inst|  ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|format_toggle:format_toggle_inst  ; work         ;
+;    |heartbeat_gen:heartbeat_inst|      ; 47 (47)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|heartbeat_gen:heartbeat_inst      ; work         ;
+;    |lap_control:lap_control_inst|      ; 2 (2)             ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|lap_control:lap_control_inst      ; work         ;
+;    |mode_fsm:mode_fsm_inst|            ; 1 (1)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|mode_fsm:mode_fsm_inst            ; work         ;
+;    |pause_control:pause_control|       ; 36 (36)           ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|pause_control:pause_control       ; work         ;
+;    |seven_segment_driver:seg0_driver|  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|seven_segment_driver:seg0_driver  ; work         ;
+;    |seven_segment_driver:seg1_driver|  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|seven_segment_driver:seg1_driver  ; work         ;
+;    |seven_segment_driver:seg3_driver|  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|seven_segment_driver:seg3_driver  ; work         ;
+;    |seven_segment_driver:seg4_driver|  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|seven_segment_driver:seg4_driver  ; work         ;
+;    |seven_segment_driver:seg6_driver|  ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|seven_segment_driver:seg6_driver  ; work         ;
+;    |seven_segment_driver:seg7_driver|  ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|seven_segment_driver:seg7_driver  ; work         ;
+;    |stopwatch_counter:sw_counter_inst| ; 30 (30)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_module|stopwatch_counter:sw_counter_inst ; work         ;
++----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                        ;
++----------------------------------------------------+----------------------------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal                          ; Free of Timing Hazards ;
++----------------------------------------------------+----------------------------------------------+------------------------+
+; clock_counter:clk_counter_inst|hr_display[0]       ; clock_counter:clk_counter_inst|hr_display[4] ; yes                    ;
+; clock_counter:clk_counter_inst|hr_display[1]       ; clock_counter:clk_counter_inst|hr_display[4] ; yes                    ;
+; clock_counter:clk_counter_inst|hr_display[3]       ; clock_counter:clk_counter_inst|hr_display[4] ; yes                    ;
+; clock_counter:clk_counter_inst|hr_display[2]       ; clock_counter:clk_counter_inst|hr_display[4] ; yes                    ;
+; clock_counter:clk_counter_inst|hr_display[4]       ; clock_counter:clk_counter_inst|hr_display[4] ; yes                    ;
+; Number of user-specified and inferred latches = 5  ;                                              ;                        ;
++----------------------------------------------------+----------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++--------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                         ;
++----------------------------------------+---------------------------------------------------+
+; Register name                          ; Reason for Removal                                ;
++----------------------------------------+---------------------------------------------------+
+; colon_min_hr[1]~reg0                   ; Stuck at VCC due to stuck port data_in            ;
+; colon_min_hr[2]~reg0                   ; Stuck at VCC due to stuck port data_in            ;
+; colon_min_hr[4]~reg0                   ; Stuck at VCC due to stuck port data_in            ;
+; colon_min_hr[5]~reg0                   ; Stuck at VCC due to stuck port data_in            ;
+; colon_min_hr[6]~reg0                   ; Stuck at VCC due to stuck port data_in            ;
+; colon_sec_min[1]~reg0                  ; Stuck at VCC due to stuck port data_in            ;
+; colon_sec_min[2]~reg0                  ; Stuck at VCC due to stuck port data_in            ;
+; colon_sec_min[4]~reg0                  ; Stuck at VCC due to stuck port data_in            ;
+; colon_sec_min[5]~reg0                  ; Stuck at VCC due to stuck port data_in            ;
+; colon_sec_min[6]~reg0                  ; Stuck at VCC due to stuck port data_in            ;
+; clock_divider:fast_clk_inst|counter[0] ; Merged with clock_divider:clk_div_inst|counter[0] ;
+; clock_divider:fast_clk_inst|counter[1] ; Merged with clock_divider:clk_div_inst|counter[1] ;
+; Total Number of Removed Registers = 12 ;                                                   ;
++----------------------------------------+---------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 214   ;
+; Number of registers using Synchronous Clear  ; 26    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 209   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 50    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; clock_counter:clk_counter_inst|am_flag  ; 2       ;
+; pause_control:pause_control|colon_blink ; 5       ;
+; Total number of inverted registers = 2  ;         ;
++-----------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top_module|debouncer:debounce_toggle|count[0]        ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top_module|debouncer:debounce_lap|count[3]           ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top_module|debouncer:debounce_mode|count[2]          ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top_module|debouncer:debounce_set_clock_hr|count[3]  ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top_module|debouncer:debounce_set_clock_min|count[2] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top_module|debouncer:debounce_set_clock_sec|count[3] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top_module|debouncer:debounce_pause|count[2]         ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top_module|debouncer:debounce_start|count[0]         ;
+; 4:1                ; 25 bits   ; 50 LEs        ; 25 LEs               ; 25 LEs                 ; Yes        ; |top_module|pause_control:pause_control|counter[3]    ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |top_module|clock_counter:clk_counter_inst|min[4]     ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |top_module|clock_counter:clk_counter_inst|hr[0]      ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 34 LEs               ; 0 LEs                  ; No         ; |top_module|disp_sec[0]                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clock_divider:clk_div_inst ;
++----------------+----------+---------------------------------------------+
+; Parameter Name ; Value    ; Type                                        ;
++----------------+----------+---------------------------------------------+
+; divisor        ; 50000000 ; Signed Integer                              ;
++----------------+----------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clock_divider:fast_clk_inst ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; divisor        ; 50000 ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debouncer:debounce_set_clock_hr ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; stable_time    ; 10    ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debouncer:debounce_set_clock_min ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; stable_time    ; 10    ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debouncer:debounce_set_clock_sec ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; stable_time    ; 10    ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debouncer:debounce_toggle ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; stable_time    ; 10    ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debouncer:debounce_start ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; stable_time    ; 10    ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debouncer:debounce_pause ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; stable_time    ; 10    ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debouncer:debounce_lap ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; stable_time    ; 10    ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: debouncer:debounce_mode ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; stable_time    ; 10    ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: binary_to_bcd:bin_to_bcd_hr ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; n              ; 5     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: binary_to_bcd:bin_to_bcd_min ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; n              ; 6     ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: binary_to_bcd:bin_to_bcd_sec ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; n              ; 6     ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Jun 04 15:26:46 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Digital_stopwatch_clock -c top_module
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file seven_segment_driver.vhd
+    Info (12022): Found design unit 1: seven_segment_driver-Behavioral
+    Info (12023): Found entity 1: seven_segment_driver
+Info (12021): Found 2 design units, including 1 entities, in source file pause_control.vhd
+    Info (12022): Found design unit 1: pause_control-Behavioral
+    Info (12023): Found entity 1: pause_control
+Info (12021): Found 2 design units, including 1 entities, in source file heartbeat_gen.vhd
+    Info (12022): Found design unit 1: heartbeat_gen-Behavioral
+    Info (12023): Found entity 1: heartbeat_gen
+Info (12021): Found 2 design units, including 1 entities, in source file debouncer.vhd
+    Info (12022): Found design unit 1: debouncer-Behavioral
+    Info (12023): Found entity 1: debouncer
+Info (12021): Found 2 design units, including 1 entities, in source file clock_divider.vhd
+    Info (12022): Found design unit 1: clock_divider-Behavioral
+    Info (12023): Found entity 1: clock_divider
+Info (12021): Found 2 design units, including 1 entities, in source file mode_fsm.vhd
+    Info (12022): Found design unit 1: mode_fsm-Behavioral
+    Info (12023): Found entity 1: mode_fsm
+Info (12021): Found 2 design units, including 1 entities, in source file format_toggle.vhd
+    Info (12022): Found design unit 1: format_toggle-Behavioral
+    Info (12023): Found entity 1: format_toggle
+Info (12021): Found 2 design units, including 1 entities, in source file clock_counter.vhd
+    Info (12022): Found design unit 1: clock_counter-Behavioral
+    Info (12023): Found entity 1: clock_counter
+Info (12021): Found 2 design units, including 1 entities, in source file stopwatch_counter.vhd
+    Info (12022): Found design unit 1: stopwatch_counter-Behavioral
+    Info (12023): Found entity 1: stopwatch_counter
+Info (12021): Found 2 design units, including 1 entities, in source file lap_control.vhd
+    Info (12022): Found design unit 1: lap_control-Behavioral
+    Info (12023): Found entity 1: lap_control
+Info (12021): Found 2 design units, including 1 entities, in source file binary_to_bcd.vhd
+    Info (12022): Found design unit 1: binary_to_bcd-Behavioral
+    Info (12023): Found entity 1: binary_to_bcd
+Info (12021): Found 2 design units, including 1 entities, in source file top_module.vhd
+    Info (12022): Found design unit 1: top_module-Behavioral
+    Info (12023): Found entity 1: top_module
+Info (12127): Elaborating entity "top_module" for the top level hierarchy
+Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:clk_div_inst"
+Info (12128): Elaborating entity "clock_divider" for hierarchy "clock_divider:fast_clk_inst"
+Info (12128): Elaborating entity "debouncer" for hierarchy "debouncer:debounce_set_clock_hr"
+Info (12128): Elaborating entity "mode_fsm" for hierarchy "mode_fsm:mode_fsm_inst"
+Info (12128): Elaborating entity "format_toggle" for hierarchy "format_toggle:format_toggle_inst"
+Info (12128): Elaborating entity "pause_control" for hierarchy "pause_control:pause_control"
+Info (12128): Elaborating entity "clock_counter" for hierarchy "clock_counter:clk_counter_inst"
+Info (10041): Inferred latch for "hr_display[0]" at clock_counter.vhd(84)
+Info (10041): Inferred latch for "hr_display[1]" at clock_counter.vhd(84)
+Info (10041): Inferred latch for "hr_display[2]" at clock_counter.vhd(84)
+Info (10041): Inferred latch for "hr_display[3]" at clock_counter.vhd(84)
+Info (10041): Inferred latch for "hr_display[4]" at clock_counter.vhd(84)
+Info (12128): Elaborating entity "stopwatch_counter" for hierarchy "stopwatch_counter:sw_counter_inst"
+Info (12128): Elaborating entity "lap_control" for hierarchy "lap_control:lap_control_inst"
+Info (12128): Elaborating entity "binary_to_bcd" for hierarchy "binary_to_bcd:bin_to_bcd_hr"
+Info (12128): Elaborating entity "binary_to_bcd" for hierarchy "binary_to_bcd:bin_to_bcd_min"
+Info (12128): Elaborating entity "seven_segment_driver" for hierarchy "seven_segment_driver:seg0_driver"
+Info (12128): Elaborating entity "heartbeat_gen" for hierarchy "heartbeat_gen:heartbeat_inst"
+Warning (13012): Latch clock_counter:clk_counter_inst|hr_display[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clock_counter:clk_counter_inst|hr[0]
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal format_toggle:format_toggle_inst|format_12hr
+Warning (13012): Latch clock_counter:clk_counter_inst|hr_display[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clock_counter:clk_counter_inst|hr[1]
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal format_toggle:format_toggle_inst|format_12hr
+Warning (13012): Latch clock_counter:clk_counter_inst|hr_display[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clock_counter:clk_counter_inst|hr[3]
+    Warning (13013): Ports ENA and PRE on the latch are fed by the same signal format_toggle:format_toggle_inst|format_12hr
+Warning (13012): Latch clock_counter:clk_counter_inst|hr_display[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clock_counter:clk_counter_inst|hr[2]
+    Warning (13013): Ports ENA and PRE on the latch are fed by the same signal format_toggle:format_toggle_inst|format_12hr
+Warning (13012): Latch clock_counter:clk_counter_inst|hr_display[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal clock_counter:clk_counter_inst|hr[4]
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal format_toggle:format_toggle_inst|format_12hr
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "colon_sec_min[1]" is stuck at VCC
+    Warning (13410): Pin "colon_sec_min[2]" is stuck at VCC
+    Warning (13410): Pin "colon_sec_min[4]" is stuck at VCC
+    Warning (13410): Pin "colon_sec_min[5]" is stuck at VCC
+    Warning (13410): Pin "colon_sec_min[6]" is stuck at VCC
+    Warning (13410): Pin "colon_min_hr[1]" is stuck at VCC
+    Warning (13410): Pin "colon_min_hr[2]" is stuck at VCC
+    Warning (13410): Pin "colon_min_hr[4]" is stuck at VCC
+    Warning (13410): Pin "colon_min_hr[5]" is stuck at VCC
+    Warning (13410): Pin "colon_min_hr[6]" is stuck at VCC
+    Warning (13410): Pin "hr_10s[1]" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 543 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 59 output pins
+    Info (21061): Implemented 473 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 28 warnings
+    Info: Peak virtual memory: 4639 megabytes
+    Info: Processing ended: Wed Jun 04 15:26:49 2025
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+
