@@ -1,0 +1,131 @@
+.form-wrapper {
+  max-width: 400px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+ 
+h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+ 
+label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+ 
+input,
+select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+ 
+button {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.8rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+ 
+button.add-btn {
+  background-color: #3498db;
+  color: white;
+}
+ 
+button.delete-btn {
+  background-color: #e74c3c;
+  color: white;
+}
+ 
+button:hover {
+  opacity: 0.9;
+}
+ 
+button:disabled {
+  background-color: #ccc !important;
+  color: #666;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+ 
+.section-list {
+  margin: 2rem auto;
+  max-width: 800px;
+}
+ 
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+ 
+thead {
+  background-color: #3498db;
+  color: white;
+}
+ 
+td,
+th {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+.Men{
+  color: rgb(63, 76, 213);
+}
+
+button{
+    background-color: rgb(255, 255, 255);
+    color: black;
+    font-weight: bold;
+    margin: 10px;
+    width:30%;
+    height:40px;
+    font-size: 10px;
+    padding: 0.5em 2em;
+}
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap; /* Prevents wrapping to new row */
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem 2rem;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  overflow-x: auto; /* Scrolls horizontally on smaller screens */
+}
+
+.nav-btn {
+  flex: 1;
+  text-align: center;
+  background: linear-gradient(90deg, #6a85f1, #867efc);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-width: 150px;
+}
+
+.nav-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}

@@ -1,0 +1,95 @@
+.home-container {
+  width: 90%;
+  max-width: 1200px;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.welcome-section {
+  text-align: center;
+  margin-bottom: 40px;
+  color: white;
+  width: 100%;
+  
+  h1 {
+    font-weight: bold;
+    margin: 0;
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-weight: bold;
+    margin: 10px 0 0 0;
+    font-size: 1.8rem;
+  }
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+.button-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.adu-button {
+  border-radius: 50px;
+  border: 1px solid white;
+  background: rgb(92, 7, 166);
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 15px 30px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  width: 150px;
+  text-align: center;
+
+  &:hover {
+    background: rgba(57, 17, 126, 0.2);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Special style for logout button hover */
+.logout-button{
+  
+  background-color: brown;
+}
+.logout-button:hover {
+  background: rgba(255, 0, 0, 0.7) !important;
+  border-color: rgba(255, 0, 0, 0.9);
+}
+
+@media (max-width: 768px) {
+  .button-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .welcome-section {
+    h1 {
+      font-size: 2rem;
+    }
+    
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+}

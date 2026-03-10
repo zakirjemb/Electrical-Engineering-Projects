@@ -1,0 +1,337 @@
+body {
+  background-color: #f3f7fb;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.campus-schedule-wrapper {
+  display: flex;
+  flex-wrap: nowrap; 
+  justify-content: center;
+  padding: 0.5rem;
+  gap: 2rem;
+  overflow-x: auto; 
+  -webkit-overflow-scrolling: touch; 
+  
+}
+
+.campus-grid {
+  min-width: 400px; 
+  background: linear-gradient(to bottom, #ffffff, #f8fbff);
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  flex-shrink: 0; 
+}
+
+.campus-grid:hover {
+  transform: translateY(-2px);
+}
+
+.campus-title {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #1e3a5f;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.schedule-table th {
+  background-color: #e2ecf8;
+  color: #34495e;
+  font-size: 16px;
+  padding: 12px;
+  border-radius: 6px 6px 0 0;
+}
+
+.schedule-table td {
+  background-color: #fdfefe;
+  vertical-align: top;
+  padding: 12px;
+  border: 1px solid #d6e0ec;
+  border-radius: 6px;
+}
+
+.slot-cell {
+  background-color: #f7faff;
+  border-radius: 8px;
+  padding: 10px;
+  border-left: 4px solid #2980b9;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.03);
+}
+
+.slot-header {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.session-info {
+  position: relative;
+  padding: 10px 12px;
+  background-color: #eaf2fb;
+  border-left: 5px solid #3498db;
+  margin-top: 8px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #2c3e50;
+}
+
+.session-info strong {
+  color: #1a5276;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #e74c3c;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.delete-btn:hover {
+  color: #c0392b;
+  transform: scale(1.2);
+}
+
+
+@media (max-width: 1024px) {
+  .campus-grid {
+    min-width: 350px;
+    padding: 1.25rem;
+  }
+  
+  .campus-title {
+    font-size: 1.6rem;
+  }
+}
+.pure-u-1-2 {
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+
+@media (max-width: 768px) {
+  .campus-schedule-wrapper {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+  
+  .campus-grid {
+    min-width: 300px;
+    padding: 1rem;
+  }
+  
+  .campus-title {
+    font-size: 1.4rem;
+  }
+  
+  .schedule-table th,
+  .schedule-table td {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .campus-schedule-wrapper {
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  .campus-grid {
+    min-width: 280px;
+  }
+  
+  .campus-title {
+    font-size: 1.3rem;
+  }
+  
+  .schedule-table th,
+  .schedule-table td {
+    padding: 8px;
+    font-size: 13px;
+  }
+}
+h2{
+  text-align: center;
+  margin-bottom: 0.5rem;
+  padding: 0 1rem;
+  max-width: 50%;
+}
+h1{
+  margin-left: 300px;
+ 
+  
+}
+.Zeki{
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  margin: 0;
+  font-size: 10px;
+  line-height: 10px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Zeki:hover {
+  background-color: #c0392b;
+  transform: scale(1.1);
+}
+
+.Meng{
+ 
+  background-color: rgb(121, 111, 215);
+  text-align: center;
+}
+.Mike{
+background-color: rgb(145, 154, 18);
+  text-align: center;
+}
+
+.TD-Container {
+  background-color: #e8eaf6; /* Light purple background */
+  border: 1px solid #5d69b3; /* Simple uniform border */
+  padding: 8px;
+  text-align: center;
+}
+
+
+.FF{
+  border-bottom: 4px solid #5d69b3;
+}
+.export-buttons {
+  display: flex;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.export-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+.export-excel {
+  background: #1d6f42;
+  color: white;
+}
+
+.export-excel:hover {
+  background: #21884f;
+  transform: translateY(-1px);
+}
+
+.export-calendar {
+  background: #4285f4;
+  color: white;
+}
+
+.export-calendar:hover {
+  background: #5a95f5;
+  transform: translateY(-1px);
+}
+
+.export-btn i {
+  font-size: 16px;
+}
+/* Session Card Styling */
+.session-card {
+  background-color: #eaf2fb;
+  border-left: 4px solid #3498db;
+  border-radius: 6px;
+  padding: 10px;
+  margin: 8px 0;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.session-card:hover {
+  background-color: #d6e7ff;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.session-card div {
+  margin: 3px 0;
+}
+
+.TD-Container {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  padding: 12px;
+  min-height: 120px;
+  transition: all 0.3s ease;
+}
+
+.TD-Container:hover {
+  background-color: #f1f5ff;
+}
+
+.slot-header {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.empty-slot {
+  color: #6c757d;
+  font-style: italic;
+  font-size: 0.9em;
+  padding: 10px;
+  text-align: center;
+}
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.nav-btn {
+  background: linear-gradient(to right, #4ec864, #37bd0e);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}

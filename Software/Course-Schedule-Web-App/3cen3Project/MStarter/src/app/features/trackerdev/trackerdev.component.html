@@ -1,0 +1,93 @@
+<br> <br> <br> <br> <br> <br>
+<div class="header">
+  <h1>Fault Tracker Dashboard</h1>
+
+<div *ngIf="showAlert" class="alert-banner">
+  <p>{{ alertMessage }}</p>
+  <button (click)="hideAlert()">Dismiss</button>
+</div>
+
+<google-map
+  #map
+  [height]="'500px'"
+  [width]="'100%'"
+  [center]="mapcenter"
+  [zoom]="zoom"
+  [options]="{ clickableIcons: false }"
+  (mapClick)="clearRoute()"
+>
+  <map-marker
+    *ngFor="let marker of informedMarkerList"
+    [position]="marker.position"
+    [title]="marker.title"
+    [icon]="getMarkerIcon(marker.severityLabel)"
+    #markerRefs="mapMarker"
+    (mapClick)="openInfoWindow(marker, markerRefs)"
+  ></map-marker>
+
+  <map-marker
+    [position]="teamPosition"
+    title="Response Team"
+    icon="http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+  ></map-marker>
+
+  <map-directions-renderer
+    *ngIf="directionsResults$ | async as directions"
+    [directions]="directions"
+  ></map-directions-renderer>
+
+  <map-info-window>
+    <div [innerHTML]="infoWindowContent"></div>
+  </map-info-window>
+</google-map>
+
+<!-- 🔍 Filters and Sorting Panel -->
+<div class="filter-panel">
+  <h3>Filter & Sort Faults</h3>
+
+  <div>
+    <label><b>Severity:</b></label>
+    <select [(ngModel)]="selectedSeverity" (change)="applyFilters()">
+      <option *ngFor="let level of severityOptions" [value]="level">{{ level }}</option>
+    </select>
+  </div>
+
+  <div>
+    <label><b>Fault Type:</b></label>
+    <select [(ngModel)]="selectedType" (change)="applyFilters()">
+      <option value="All">All</option>
+      <option *ngFor="let type of uniqueTypes" [value]="type">{{ type }}</option>
+    </select>
+  </div>
+
+  <div>
+    <label><b>Max Distance (m):</b> {{ maxDistance }}</label>
+    <input
+      type="range"
+      min="0"
+      max="20000"
+      step="100"
+      [(ngModel)]="maxDistance"
+      (change)="applyFilters()"
+    />
+  </div>
+
+  <div>
+    <label><b>Sort By:</b></label>
+    <select [(ngModel)]="sortOption" (change)="applyFilters()">
+      <option value="severity">Severity (High → Low)</option>
+      <option value="distance">Distance (Near → Far)</option>
+    </select>
+  </div>
+
+  <div>
+    <button (click)="resetFilters()">Reset Filters</button>
+  </div>
+</div>
+
+<div class="legend">
+  <div><img src="http://maps.google.com/mapfiles/ms/icons/green-dot.png" /> Minor</div>
+  <div><img src="http://maps.google.com/mapfiles/ms/icons/yellow-dot.png" /> Moderate</div>
+  <div><img src="http://maps.google.com/mapfiles/ms/icons/red-dot.png" /> Severe</div>
+  <div><img src="http://maps.google.com/mapfiles/ms/icons/blue-dot.png" /> Response Team</div>
+</div>

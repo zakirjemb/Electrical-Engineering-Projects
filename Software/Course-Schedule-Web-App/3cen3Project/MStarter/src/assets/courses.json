@@ -1,0 +1,17 @@
+{
+    "CEN201": { "name": "Programming I" },
+    "CEN202": { "name": "Programming II" },
+    "CEN301": { "name": "Software Engineering" },
+    "CEN302": { "name": "Algorithms" },
+    "CEN312": { "name": "Embedded Systems" },
+    "CEN321": { "name": "Networks" },
+    "CEN401": { "name": "AI Systems" },
+    "EEN210": { "name": "Electronics I" },
+    "EEN211": { "name": "Electronics II" },
+    "EEN301": { "name": "Circuits" },
+    "EEN302": { "name": "Signal Processing" },
+    "EEN321": { "name": "Power Systems" },
+    "EEN401": { "name": "Control Systems" },
+    "EEN402": { "name": "Advanced Robotics" }
+  }
+  

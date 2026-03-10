@@ -1,0 +1,38 @@
+ <m-container>
+  <br><br> <br><br>
+
+<div class="nav-buttons">
+  <button class="nav-btn" (click)="goToHome()">Home</button>
+    <button class="nav-btn" (click)="goToSchedule()">Schedule View</button>
+  <button class="nav-btn" (click)="goToSession()">Session Creation</button>
+    <button class="nav-btn" (click)="goToError()">Error Table</button>
+  <button class="nav-btn" (click)="goToVersion()">Version Comparsion</button>
+  <button class="nav-btn" (click)="logout()">Log Out</button>
+
+</div>
+
+
+<m-card class="load-container" [header]=" 'Instructor Load Summary' " [subheader]="''" [imageurl]="''">
+
+  <table class="pure-table pure-table-bordered" *ngIf="instructorLoads.length > 0">
+    <thead>
+      <tr>
+        <th>Instructor</th>
+        <th>Sessions Assigned</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let instructor of instructorLoads" [ngClass]="getLoadClass(instructor.count)">
+        <td>{{ instructor.instructor }}</td>
+        <td>{{ instructor.count }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <m-aha *ngIf="loading" type="warning" header="Loading">Loading...</m-aha>
+    <m-aha *ngIf="error" type="error" header="Error">{{ error }}</m-aha>
+    <m-aha *ngIf="!loading && instructorLoads.length === 0" type="success" header="Status">
+      No load data available.
+    </m-aha>
+</m-card>
+</m-container> 
+

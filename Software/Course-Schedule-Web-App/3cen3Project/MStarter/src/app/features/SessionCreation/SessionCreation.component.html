@@ -1,0 +1,85 @@
+
+<m-container>
+  <br><br>
+  <div class="nav-buttons">
+
+  <button class="nav-btn" (click)="goToHome()">Home</button>
+  <button class="nav-btn" (click)="goToSchedule()">Schedule View</button>
+    <button class="nav-btn" (click)="goToLoad()">Load Calculation</button>
+  <button class="nav-btn" (click)="goToError()">Error Table</button>  
+   <button class="nav-btn" (click)="goToVersion()">Version Comparsion</button>
+  <button class="nav-btn" (click)="logout()">Log Out</button>
+</div>
+
+<div class="pure-g">
+  <div class="pure-u-1-2 form-wrapper">
+   
+    
+  <m-card [header]="'Add a New Section'">
+    <form (ngSubmit)="addSession()" #addForm="ngForm">
+      <label>Course:</label>
+      <select [(ngModel)]="newSession.course" name="course" required>
+        <option value="" disabled>Select Course</option>
+        <option *ngFor="let course of courses" [value]="course">{{ course }}</option>
+      </select>
+
+      <label>Instructor:</label>
+      <input type="text" [(ngModel)]="newSession.instructor" name="instructor" required />
+
+      <label>Section Number:</label>
+      <input type="number" [(ngModel)]="newSession.section" name="section" required min="1" />
+
+      <label>Capacity:</label>
+      <select [(ngModel)]="newSession.capacity" name="capacity" required>
+        <option value="" disabled>Select Capacity</option>
+        <option value="Regular">Regular</option>
+        <option value="Large">Large</option>
+        <option value="Mega">Mega</option>
+      </select>
+
+      <label>Slot:</label>
+      <select [(ngModel)]="newSession.slot" name="slot" required>
+        <option value="" disabled>Select Slot</option>
+        <option *ngFor="let slot of slotOptions" [value]="slot.id">{{ slot.label }}</option>
+      </select>
+
+      <label>Campus:</label>
+      <select [(ngModel)]="newSession.campus" name="campus" required>
+        <option value="" disabled>Select Campus</option>
+        <option value="Abu Dhabi">Abu Dhabi</option>
+        <option value="Al Ain">Al Ain</option>
+      </select>
+
+      <button type="submit" class="add-btn" [disabled]="!addForm.valid">Add Section</button>
+    </form>
+  </m-card>
+</div>
+<div class="pure-u-1-2 form-wrapper">
+  <m-card [header]="'Delete a Section'">
+    <form (ngSubmit)="deleteSession()" #deleteForm="ngForm">
+      <label>Course:</label>
+      <select [(ngModel)]="deleteData.course" name="deleteCourse" required>
+        <option value="" disabled>Select Course</option>
+        <option *ngFor="let course of courses" [value]="course">{{ course }}</option>
+      </select>
+
+      <label>Instructor:</label>
+      <input type="text" [(ngModel)]="deleteData.instructor" name="deleteInstructor" required />
+
+      <label>Section Number:</label>
+      <input type="number" [(ngModel)]="deleteData.section" name="deleteSection" required min="1" />
+
+
+      <label>Slot:</label>
+      <select [(ngModel)]="deleteData.slot" name="deleteSlot" required>
+        <option value="" disabled>Select Slot</option>
+        <option *ngFor="let slot of slotOptions" [value]="slot.id">{{ slot.label }}</option>
+      </select>
+
+      
+
+      <button type="submit" class="delete-btn" [disabled]="!deleteForm.valid">Delete Section</button>
+    </form>
+  </m-card>
+</div></div>
+</m-container>

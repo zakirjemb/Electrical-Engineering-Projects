@@ -1,0 +1,54 @@
+<m-container>
+  <div class="library-header">
+    <h2>📚 Personal Book Library</h2>
+    <div class="stats-bar">
+      <div class="stat-item">Total: <span>{{ books.length }}</span></div>
+      <div class="stat-item">Read: <span>{{ readCount }}</span></div>
+      <div class="stat-item" *ngIf="lastViewedTitle">Last Viewed: <i>{{ lastViewedTitle }}</i></div>
+    </div>
+  </div>
+
+  <div class="main-grid">
+    <m-card title="Add New Book">
+      <div class="add-book-form">
+        <div class="input-group">
+          <label>Book Title</label>
+          <input [(ngModel)]="newBook.title" placeholder="Enter title...">
+        </div>
+        <div class="input-group">
+          <label>Author</label>
+          <input [(ngModel)]="newBook.author" placeholder="Enter author...">
+        </div>
+        <div class="input-group">
+          <label>Genre</label>
+          <input [(ngModel)]="newBook.genre" placeholder="Enter genre...">
+        </div>
+        <div class="input-group">
+          <label>Date Added</label>
+          <input [(ngModel)]="newBook.date" type="date">
+        </div>
+        <button class="btn-add" (click)="addBook()">Add to Collection</button>
+        <p class="status-msg" *ngIf="msg">{{ msg }}</p>
+      </div>
+    </m-card>
+
+    <div class="book-collection">
+      <m-card *ngFor="let book of books" class="book-card">
+        <div class="book-content">
+          <div class="book-info">
+            <h3 [class.text-read]="book.read">{{ book.title }}</h3>
+            <p class="author">By {{ book.author }}</p>
+            <div class="meta">
+              <span class="badge">{{ book.genre || 'General' }}</span>
+              <span class="date">{{ book.date }}</span>
+            </div>
+          </div>
+          <div class="book-actions">
+            <button *ngIf="!book.read" class="btn-read" (click)="markRead(book)">✔ Mark Read</button>
+            <button class="btn-delete" (click)="deleteBook(book)">🗑 Delete</button>
+          </div>
+        </div>
+      </m-card>
+    </div>
+  </div>
+</m-container>

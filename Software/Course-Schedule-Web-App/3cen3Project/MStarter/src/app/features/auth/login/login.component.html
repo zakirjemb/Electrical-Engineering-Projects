@@ -1,0 +1,54 @@
+<m-container>
+  <section *ngIf="!checkingLogin">
+    <div class="container" id="container" [class.right-panel-active]="isSignUp">
+
+      <!-- Sign Up Form -->
+      <div class="form-container sign-up-container">
+        <form (ngSubmit)="signup()">
+          <h1>Sign Up</h1>
+          <br />
+          <label>
+            <input type="email" [(ngModel)]="email" name="signupEmail" placeholder="Email" required />
+          </label>
+          <label>
+            <input type="password" [(ngModel)]="password" name="signupPassword" placeholder="Password" required />
+          </label>
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
+
+      <!-- Sign In Form -->
+      <div class="form-container sign-in-container">
+        <form (ngSubmit)="login()">
+          <h1>Sign in</h1>
+          <br />
+          <p *ngIf="signupMessage" style="color: green;">{{ signupMessage }}</p>
+          <label>
+            <input type="email" [(ngModel)]="email" name="loginEmail" placeholder="Email" required />
+          </label>
+          <label>
+            <input type="password" [(ngModel)]="password" name="loginPassword" placeholder="Password" required />
+          </label>
+          <button type="submit">Sign In</button>
+        </form>
+      </div>
+
+      <!-- Overlay -->
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1 class="create">Log in</h1>
+            <p>Sign in here if you already have an account</p>
+            <button type="button" class="ghost" (click)="isSignUp = false">Sign In</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1 class="create">Create Account!</h1>
+            <p>Sign up if you still don't have an account...</p>
+            <button type="button" class="ghost" (click)="isSignUp = true">Sign Up</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</m-container>

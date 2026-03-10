@@ -1,0 +1,22 @@
+<m-container class="home-container">
+  <br><br><br><br>
+  <div class="welcome-section">
+    <h1>Abu Dhabi University</h1>
+    <h2>Course Scheduling System</h2>
+  </div>
+
+  <div class="button-container">
+    <div class="button-column">
+      <button class="adu-button" (click)="goToSchedule()">Schedule View</button>
+      <button class="adu-button" (click)="goToSession()">Session Creation & Deletion</button>
+      <button class="adu-button" (click)="goToLoad()">Load Calculation</button>
+    </div>
+    <div class="button-column">
+      <button class="adu-button" (click)="goToError()">Error Table</button>
+      <button class="adu-button" (click)="goToVersion()">Version History</button>
+      <button class="adu-button logout-button" (click)="logout()">Logout</button>
+      <button class="adu-button" (click)="goToTracker()">Tracker</button>
+      <button class="adu-button" (click)="goToOBAD()">OBAD Feature</button>
+    </div>
+  </div>
+</m-container>

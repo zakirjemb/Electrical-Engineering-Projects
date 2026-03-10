@@ -1,0 +1,115 @@
+.load-container {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  background: linear-gradient(to right, #ffffff, #f0f4ff);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  margin-bottom: clamp(2rem, 5vw, 3.125rem);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+  font-size: 1.9rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.table-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.pure-table {
+  width: auto;
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-size: 16px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.pure-table th {
+  background-color: #f7f9fc;
+  color: #34495e;
+  font-weight: 600;
+  padding: 14px 20px;
+  text-align: center;
+}
+
+.pure-table td {
+  padding: 14px 20px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: center;
+}
+
+.pure-table tr:last-child td {
+  border-bottom: none;
+}
+
+.underload td {
+  background-color: #27ae60; 
+  color: white; 
+}
+
+.balanced td {
+  background-color: #fff59d; 
+  color: #333;
+}
+
+.overload td {
+  background-color: #e57373; 
+  color: white;
+}
+
+.pure-table tbody tr:hover td {
+  background-color: #dfe9f3;
+  transition: background-color 0.3s;
+}
+
+.loading,
+.error,
+.empty {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 15px;
+}
+
+.error {
+  color: #e74c3c;
+}
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.nav-btn {
+  background: linear-gradient(to right, #a94ec8, #fb8feb);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}

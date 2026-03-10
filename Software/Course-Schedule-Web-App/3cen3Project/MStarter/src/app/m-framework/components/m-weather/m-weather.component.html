@@ -1,0 +1,57 @@
+<m-card [header]=dayWeather.time [subheader]=getDayOfWeek(dayWeather.time) [imageurl]="''">
+    <table>
+        <tr>
+            <td>
+                <i style='font-size:24px' class='fas'>&#xf769;</i> <span class="text">Max. Temperature</span>
+            </td>
+            <td>
+                <div class="temperature"><div class="high">{{dayWeather.temperatureMax}}°C</div></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <i style='font-size:24px' class='fas'>&#xf76b;</i> <span class="text">Min. Temperature</span>
+            </td>
+            <td>
+                <div class="temperature"><div class="low">{{dayWeather.temperatureMin}}°C</div></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <i style='font-size:24px' class='fas'>&#xf72e;</i> <span class="text">Wind</span>
+            </td>
+            <td class="values">
+                <span class="arrow-container"><span [ngClass]="{'arrow': true, 
+                    'arrow-0': dayWeather.windDirection === 0,
+                    'arrow-45': dayWeather.windDirection === 45,
+                    'arrow-90': dayWeather.windDirection === 90,
+                    'arrow-135': dayWeather.windDirection === 135,
+                    'arrow-180': dayWeather.windDirection === 180,
+                    'arrow-225': dayWeather.windDirection === 225,
+                    'arrow-270': dayWeather.windDirection === 270,
+                    'arrow-315': dayWeather.windDirection === 315}"></span></span>
+                {{dayWeather.windspeedMean}} km/h
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <i style='font-size:22px' class='fas'>&#x2614;</i> <span class="text">Precipitation</span>
+            </td>
+            <td class="values">{{dayWeather.precipitation}}</td>
+        </tr>
+        <tr>
+            <td>
+                <i style='font-size:20px' class='fas'>&#xf75f;</i> <span class="text">Humidity</span>
+            </td>
+            <td class="values">{{dayWeather.relativeHumidityMean}}</td>
+        </tr>
+        <tr>
+            <td><span class="text">Rain spot</span></td>
+            <td style="text-align: center; vertical-align: middle;">
+                <m-rainspot
+                [rainSPOT]="decoderainSpotString(dayWeather.rainSpot)"
+                ></m-rainspot>
+            </td>
+        </tr>
+    </table>
+</m-card>

@@ -1,0 +1,116 @@
+<m-container>
+  <br><br><br><br>
+  <h1>Schedule Views for Both Campuses</h1>
+
+  
+  <div class="export-buttons">
+    <button class="export-btn export-excel" (click)="exportToExcel()">
+      📊 Export to Excel
+    </button>
+    <button class="export-btn export-calendar" (click)="exportToGoogleCalendar(sessions)">
+      📅 Export to Google Calendar
+    </button>
+  </div>
+
+
+  
+  <div class="pure-g">
+  
+    
+    <div class="pure-u-1-2">
+      <div class="card">
+        <h2 class="card-title">Abu Dhabi Campus</h2>
+        <div class="table-wrap">
+          <table class="pure-table pure-table-bordered">
+            <thead>
+              <tr><th class="Meng">MW</th><th class="Mike">TR</th></tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let i of [0,1,2,3,4,5,6]">
+                <td class="TD-Container" [attr.data-slot-id]="mwSlots[i].id">
+                  <div class="slot-header">Slot {{mwSlots[i].id}}: MW {{mwSlots[i].time}}</div>
+                  <ng-container *ngIf="getSessionsForSlot(mwSlots[i].id, 'Abu Dhabi').length > 0; else emptyMW1">
+                    <div *ngFor="let session of getSessionsForSlot(mwSlots[i].id, 'Abu Dhabi')" class="session-card" draggable="true">
+                      <div><strong>{{session.course}}</strong> (Sec {{session.section}})</div>
+                      <div>{{session.instructor}}</div>
+                      <div class="text-muted">{{session.room }}</div>
+                      <button class="Zeki" (click)="deleteSessionById(session.id!); $event.stopPropagation()">X</button>
+                    </div>
+                  </ng-container>
+                  <ng-template #emptyMW1><div class="empty-slot">No sessions</div></ng-template>
+                </td>
+
+                <td class="TD-Container" [attr.data-slot-id]="trSlots[i].id">
+                  <div class="slot-header">Slot {{trSlots[i].id}}: TR {{trSlots[i].time}}</div>
+                  <ng-container *ngIf="getSessionsForSlot(trSlots[i].id, 'Abu Dhabi').length > 0; else emptyTR1">
+                    <div *ngFor="let session of getSessionsForSlot(trSlots[i].id, 'Abu Dhabi')" class="session-card" draggable="true">
+                      <div><strong>{{session.course}}</strong> (Sec {{session.section}})</div>
+                      <div>{{session.instructor}}</div>
+                      <div class="text-muted">{{session.room }}</div>
+                      <button class="Zeki" (click)="deleteSessionById(session.id!); $event.stopPropagation()">X</button>
+                    </div>
+                  </ng-container>
+                  <ng-template #emptyTR1><div class="empty-slot">No sessions</div></ng-template>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Al Ain Campus -->
+    <div class="pure-u-1-2">
+      <div class="card">
+        <h2 class="card-title">Al Ain Campus</h2>
+        <div class="table-wrap">
+          <table class="pure-table pure-table-bordered">
+            <thead>
+              <tr><th class="Meng">MW</th><th class="Mike">TR</th></tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let i of slotIndices">
+                <td class="TD-Container" [attr.data-slot-id]="mwSlots[i].id">
+                  <div class="slot-header">Slot {{mwSlots[i].id}}: MW {{mwSlots[i].time}}</div>
+                  <ng-container *ngIf="getSessionsForSlot(mwSlots[i].id, 'Al Ain').length > 0; else emptyMW2">
+                    <div *ngFor="let session of getSessionsForSlot(mwSlots[i].id, 'Al Ain')" class="session-card" draggable="true">
+                      <div><strong>{{session.course}}</strong> (Sec {{session.section}})</div>
+                      <div>{{session.instructor}}</div>
+                      <div class="text-muted">{{session.room }}</div>
+                      <button class="Zeki" (click)="deleteSessionById(session.id!); $event.stopPropagation()">X</button>
+                    </div>
+                  </ng-container>
+                  <ng-template #emptyMW2><div class="empty-slot">No sessions</div></ng-template>
+                </td>
+
+                <td class="TD-Container" [attr.data-slot-id]="trSlots[i].id">
+                  <div class="slot-header">Slot {{trSlots[i].id}}: TR {{trSlots[i].time}}</div>
+                  <ng-container *ngIf="getSessionsForSlot(trSlots[i].id, 'Al Ain').length > 0; else emptyTR2">
+                    <div *ngFor="let session of getSessionsForSlot(trSlots[i].id, 'Al Ain')" class="session-card" draggable="true">
+                      <div><strong>{{session.course}}</strong> (Sec {{session.section}})</div>
+                      <div>{{session.instructor}}</div>
+                      <div class="text-muted">{{session.room}}</div>
+                      <button class="Zeki" (click)="deleteSessionById(session.id!); $event.stopPropagation()">X</button>
+                    </div>
+                  </ng-container>
+                  <ng-template #emptyTR2><div class="empty-slot">No sessions</div></ng-template>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div> 
+
+      <div class="nav-buttons">
+
+  <button class="nav-btn" (click)="goToHome()">Home</button>
+     <button class="nav-btn" (click)="goToSession()">Session Creation</button>
+  <button class="nav-btn" (click)="goToLoad()">Load Calculation</button>
+  <button class="nav-btn" (click)="goToError()">Error Table</button>
+  <button class="nav-btn" (click)="goToVersion()">Version Comparison</button>
+  <button class="nav-btn" (click)="logout()">Log Out</button> 
+</div>
+</m-container>

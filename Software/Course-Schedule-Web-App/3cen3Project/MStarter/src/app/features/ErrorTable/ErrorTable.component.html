@@ -1,0 +1,40 @@
+<m-container>
+  <br><br><br> <br>
+  <div class="nav-buttons">
+      <button class="nav-btn" (click)="goToHome()">Home</button>
+     <button class="nav-btn" (click)="goToSchedule()">Schedule View</button>
+    <button class="nav-btn" (click)="goToSession()">Session Creation</button>
+    <button class="nav-btn" (click)="goToLoad()">Load Calculation</button>
+     <button class="nav-btn" (click)="goToVersion()">Version Comparison</button>
+    <button class="nav-btn" (click)="logout()">Log Out</button>
+  </div>
+  <div class="error-container">
+    <h2>Error and Warning Summary</h2>
+
+    <m-aha *ngIf="loading" type="warning" header="Status">Loading issues...</m-aha>
+    <m-aha *ngIf="error" type="error" header="Error">{{ error }}</m-aha>
+
+    <table class="pure-table pure-table-bordered" *ngIf="!loading && messages.length">
+      <thead>
+        <tr>
+          <th class="ABC">Type</th>
+          <th class="EDF">Message</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let msg of messages" [ngClass]="{
+          'error-row': msg.includes('Time conflict'),
+          'warning-row': msg.includes('Warning:')
+        }">
+          <td class="type-cell">
+            <span *ngIf="msg.includes('Time conflict')" class="error-badge">Error</span>
+            <span *ngIf="msg.includes('Warning:')" class="warning-badge">Warning</span>
+          </td>
+          <td>{{ msg }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div *ngIf="!loading && messages.length === 0" class="status">No conflicts detected.</div>
+  </div>
+</m-container>

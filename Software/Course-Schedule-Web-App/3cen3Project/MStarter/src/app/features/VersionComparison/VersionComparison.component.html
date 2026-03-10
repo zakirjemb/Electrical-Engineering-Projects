@@ -1,0 +1,56 @@
+<m-container>
+  <br><br><br><br>
+
+  <div class="nav-buttons">
+
+  <button class="nav-btn" (click)="goToHome()">Home</button>
+   <button class="nav-btn" (click)="goToSchedule()">Schedule View </button>
+     <button class="nav-btn" (click)="goToSession()">Session Creation</button>
+  <button class="nav-btn" (click)="goToLoad()">Load Calculation</button>
+  <button class="nav-btn" (click)="goToError()">Error Table</button>
+  <button class="nav-btn" (click)="logout()">Log Out</button> 
+</div>
+
+
+  <m-card [header]="'Save and Compare Schedule Versions'" [subheader]="''" [imageurl]="''">
+    <div class="save-section">
+      <input type="text" [(ngModel)]="versionName" placeholder="Enter version name..." required />
+      <button (click)="saveVersion()" class="save-btn">Save Version</button>
+
+    </div>
+
+    <h3>Compare Versions</h3>
+    <div class="compare-section">
+      <select [(ngModel)]="versionAId" required>
+        <option value="" disabled>Select Version A</option>
+        <option *ngFor="let v of versions" [value]="v.id">{{ v.name }}</option>
+      </select>
+
+      <select [(ngModel)]="versionBId" required>
+        <option value="" disabled>Select Version B</option>
+        <option *ngFor="let v of versions" [value]="v.id">{{ v.name }}</option>
+      </select>
+
+      <button (click)="compareVersions()" class="compare-btn">Compare</button>
+    </div>
+
+    <div *ngIf="loading" class="status">Comparing versions...</div>
+    <div *ngIf="error" class="status error">{{ error }}</div>
+
+    <div *ngIf="diffResults.length" class="diff-section">
+      <h3>Differences Found:</h3>
+      <ul class="diff-list">
+        <li *ngFor="let diff of diffResults">{{ diff }}</li>
+      </ul>
+    </div>
+
+<div *ngIf="hasCompared && !loading && !diffResults.length" class="status">
+  No differences found between the selected versions.
+</div>
+
+  </m-card>
+</m-container>  
+
+
+
+  

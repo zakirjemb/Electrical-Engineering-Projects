@@ -1,0 +1,26 @@
+<div class="header">
+  <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+    
+    <div class="logo-container">
+      <img src="../../assets/logo5.png" alt="Logo" width="200">
+     </div>
+
+    <p class="logo-title pure-menu-heading">{{ title }}</p>
+    <div>
+    <ul class="pure-menu-list">
+      <li class="pure-menu-item">
+        <a routerLink="/home" class="pure-menu-link" [ngClass]="{ 'active-link': isActive('home') }">
+          {{ homename }}
+        </a>
+      </li>
+      <li *ngFor="let feature of features" class="pure-menu-item">
+        <a [routerLink]="'/' + feature.path"
+           class="pure-menu-link"
+           [ngClass]="{ 'active-link': isActive(feature.path) }">
+          {{ feature.name }}
+        </a>
+      </li>
+    </ul>
+    </div>
+  </div>
+</div>
