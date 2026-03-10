@@ -1,0 +1,12 @@
+Span(Hz) = 10000000
+RBW(Hz) = 1000
+VBW(Hz) = 1000
+Min_Freq(Hz) = 9000000000
+Max_Freq(Hz) = 9000000000
+Step_Freq(Hz) = 1000000000
+Amplitude_Set (dBm) = -10
+Step_Angle(Deg) = 0.5
+Total_Angle(Deg) = 360
+Scan_Point_per_Freq = 720
+Total_Scan_Point = 720
+Initial_Direction = Clockwise
